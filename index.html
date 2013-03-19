@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>300 - End Titles</title>
+<style>
+	body {
+		background: #000;
+		color: #bd2331;
+		font-size: 62.5%; /* normalize font size to 16px by reducing from 100% to 62.5% */
+	}
+	body {
+		font-size: 1.5em; /* 16x1.5 = 24px <-- here we set the font size in ems */
+		font-family: "Adam warren 0.2", "Comic Sans MS", cursive;
+		font-weight:normal;
+		-webkit-font-smoothing: antialiased; 
+		width: 960px;
+		margin:0 auto;
+		/*  make letters look thinner on Mac systems 
+			http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing */
+	}
+	section {
+		width:960px;
+		
+	}
+	dl { 
+		width: 600px;
+		margin: 0 auto;
+	}
+	dt {
+		float: left;
+		width: 150px; 
+		text-align: right;
+		padding: 5px 25px 0 0;
+		clear: left;
+		font-size: 0.75em; /* 16 x 0.8 = 12px */
+		vertical-align:bottom
+	}
+	hgroup {
+		position: relative;
+		height: 700px;
+	}		
+	hgroup img {	
+		
+	}
+	hgroup div {
+		position:absolute; 
+		z-index: 1;
+	}
+	.three {
+		top: 100px;
+		left: 20px;
+	}
+	.zero {
+		top: 100px;
+		left: 300px;
+	}
+	.zero:nth-child(2) {
+		top: 100px;
+		left: 455px;
+	}
+	footer {
+		font-size: .75em; 
+	}
+	/* splatters 
+	.splat {
+	}
+	.splat#a {
+		top: 100px;
+		left: 250px;
+	}
+	.splat#b {
+		top:0px;
+		left: 300px;
+	}
+	.splat#c {
+		top:50px;
+		left: 550px;
+	}
+	.splat#d {
+		top: 10px;
+		left: 150px;
+	}
+	.splat#d img {
+		width: 600px;
+	} */
+</style>
+</head>
+
+<body>
+<article>
+  <section id="intro">
+    <hgroup>
+      <div class="three"><img src="assets/title/3.svg"></div>
+      <div class="zero first"><img src="assets/title/0-1.svg"></div>
+      <div class="zero second"><img src="assets/title/0-2.svg"></div>
+      <!--
+      <div id="a" class="splat"><img src="assets/title/splatter-1.svg"></div>
+      <div id="b" class="splat"><img src="assets/title/splatter-2.svg"></div>
+      <div id="c" class="splat"><img src="assets/title/splatter-3.svg"></div>
+      <div id="d" class="splat"><img src="assets/title/splatter-4.svg"></div>
+      -->
+    <hgroup>
+  </section>
+  <section id="cast">
+    <h3>Cast</h3>
+    <dl>
+      <dt>Leonidas</dt>
+      <dd>Gerard Butler</dd>
+      <dt>Gorgo</dt>
+      <dd>Lena Headey</dd>
+      <dt>Theron</dt>
+      <dd>Dominic West</dd>
+      <dt>Dilios</dt>
+      <dd>David Wenham</dd>
+      <dt>Captain</dt>
+      <dd>Vincent Regan</dd>
+      <dt>Stelios</dt>
+      <dd>Michael Fassbender</dd>
+      <dt>Astinos</dt>
+      <dd>Tom Wisdom</dd>
+      <dt>Ephialtes</dt>
+      <dd>Andrew Tiernan</dd>
+      <dt>Xerxes</dt>
+      <dd>Rodrigo Santoro</dd>
+      <dt>Pleistarchos</dt>
+      <dd>Giovani Antonio Cimmino</dd>
+      <dt>Loyalist</dt>
+      <dd>Stephen McHattie</dd>
+    </dl>
+  </section>
+  <section>
+  	<footer>
+    	<h3>Colophon</h3>
+      <ul>
+      	<li>Created by</li>
+        <li>Using jQuery [ version ]</li>
+        <li>and [ insert name here ] plugin</li>
+      </ul>
+    </footer>
+  </section>
+</article>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.scrollorama.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<script>
+$(document).ready(function() {
+	//let's us lettering.js
+	// we'll setup blocks for each <section> tag
+  var scrollorama = $.scrollorama({
+		blocks:'section'
+  });
+	
+	scrollorama
+//		.animate('.three',{ delay:1000, duration:3000, property:'left', start: 350 })
+		.animate('.three',{ duration:1000, property:'rotate', start:-36, end:0, pin:true })
+		.animate('.three img',{ duration:1000, property:'zoom', start:18, pin: true})
+		.animate('.second',{ duration:1000, property:'left', start: 150, pin:true })
+		.animate('.second',{ duration:1000, property:'rotate', start:-62, end:0, pin:true })
+		.animate('.second img',{ duration:1000, property:'zoom', start:13, end:1, pin: true });
+	scrollorama
+//		.animate('.three',{ delay:1000, duration:3000, property:'left', start: 350 })
+		.animate('.three',{ duration:5000, property:'left', start:120, pin:true })
+		
+//	scrollorama
+//		.animate('.first',{ duration:4000, property:'left', start: 150})
+//		.animate('.first',{ duration:4000, property:'zoom', start:3, end:1, pin: true });
+//				
+//		.animate('.three',{ duration:400, property:'left', start:-14, end:.1, pin: true });
+});
+</script>
+</body>
+</html>
